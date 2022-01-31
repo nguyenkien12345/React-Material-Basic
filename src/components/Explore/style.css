@@ -1,0 +1,11 @@
+.card-panel{
+    height: 330px;
+}
+
+/* Nếu màn hình từ 560px đổ xuống */
+@media screen and (max-width: 560px) {
+    .card-panel{
+        height: 400px;
+        font-size: 13px;
+    }
+}

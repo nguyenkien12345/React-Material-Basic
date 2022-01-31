@@ -1,0 +1,9 @@
+- <i className="material-icons">menu</i>: Sử dụng icon menu (Lưu ý code phải y chang không được thay đổi). Chỉ hiển thị ra icon menu này khi màn hình hiển thị dạng kích thước điện thoại
+- Các sự kiện jquery sẽ được sử lý trong index.html (Chủ yếu sử dụng materialize.js nhưng nếu được nên import cả jquery cài riêng vào) (import '../../../node_modules/jquery/dist/jquery';)
+- Ở các file index.js nên import css vào
+    import '../../../node_modules/materialize-css/dist/css/materialize.min.css';
+- Chỉ cần import jquery cũng như materialize.js ở footer vì nó luôn nằm trong landing page những file khác không cần import lại
+- Các tên className không nên thay đổi lung tung tuỳ tiện
+- Trang web tham khảo icon (https://material-ui.com/components/material-icons/)
+- class caption trong mục Media: Chú thích nếu được chỉ định. (thường đi kèm với ảnh)
+- class hide-on-small-only trong mục Helpers: Hidden for Mobile Only

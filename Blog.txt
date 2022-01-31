@@ -1,0 +1,185 @@
+import React from 'react';
+import { makeStyles, ThemeProvider, createMuiTheme, Typography, AppBar, Toolbar, Box, Container, Grid, Card, CardContent, CardActionArea, CardMedia, CardActions, Avatar } from '@material-ui/core';
+import { BookmarkBorder } from '@material-ui/icons';
+import { Pagination } from '@material-ui/lab';
+import 'fontsource-roboto';
+
+
+// Định dạng theme mình muốn sử dụng
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: "#764abc"
+    }
+  },
+  background: {
+    default: "#fff"
+  }
+})
+
+// Định dạng css
+const useStyles = makeStyles((theme) => ({
+  appBar: {
+    backgroundColor: "#fff"
+  },
+  hero: {
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://scontent.fhan2-4.fna.fbcdn.net/v/t1.6435-9/169979829_1686988718161634_2244784257324983061_n.jpg?_nc_cat=105&ccb=1-3&_nc_sid=8bfeb9&_nc_ohc=1jHIwYd9bkEAX_QAhW8&_nc_ht=scontent.fhan2-4.fna&oh=172a5379a15d2b8975d5c9e5fc91631b&oe=60DD9EE9')`,
+    height: "500px",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    color: "#fff",
+    fontSize: "4rem",
+    position: "relative",
+    // Responsive
+    [theme.breakpoints.down("sm")]:{
+      height: 300,
+      fontSize: "3rem"
+    }
+  },
+  blogsContainer: {
+    paddingTop: theme.spacing(3)
+  },
+  blogTitle: {
+    fontWeight: 800,
+    paddingBottom: theme.spacing(3)
+  },
+  card: {
+    width: "100%"
+  },
+  media: {
+    height: 240
+  },
+  cardAction: {
+    display: "flex",
+    margin: "0px 10px",
+    justifyContent: "space-between"
+  },
+  author: {
+    display: "flex"
+  },
+  pagination: {
+    display: "flex",
+    justifyContent: "center"
+  }
+
+}));
+
+const users = [
+  {
+    name: 'Nguyễn Trung Kiên',
+    school: 'Đại học Hoa Sen',
+    hobby: 'Football',
+    image: 'https://scontent.fhan2-2.fna.fbcdn.net/v/t1.6435-9/148473735_1433497853658653_7111666104408921372_n.jpg?_nc_cat=106&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=4dMP6vmP4eMAX-6hm3n&_nc_ht=scontent.fhan2-2.fna&oh=3ba64167b55a1fd3b5cf6301d9c206d6&oe=60DEE705'
+  },
+  {
+    name: 'Ngô Nguyễn Phong My',
+    school: 'Đại học Hutech',
+    hobby: 'Korean',
+    image: 'https://scontent.fhan2-4.fna.fbcdn.net/v/t1.6435-9/169979829_1686988718161634_2244784257324983061_n.jpg?_nc_cat=105&ccb=1-3&_nc_sid=8bfeb9&_nc_ohc=1jHIwYd9bkEAX_34Ncp&tn=H2TAoZz0llPc6Z2A&_nc_ht=scontent.fhan2-4.fna&oh=dfe51cb23a045eb53ca2ae859984dab9&oe=60DD9EE9'
+  },
+  {
+    name: 'Đặng Minh Thư',
+    school: 'Đại học Nguyễn Tất Thành',
+    hobby: 'Boy',
+    image: 'https://scontent.fhan2-3.fna.fbcdn.net/v/t1.6435-9/165590210_1635101160015050_235782122284231944_n.jpg?_nc_cat=108&ccb=1-3&_nc_sid=8bfeb9&_nc_ohc=VSbvrQy-lMUAX_SBuCo&_nc_ht=scontent.fhan2-3.fna&oh=2e9a898d3e2d121c202a9dc4ee22efb8&oe=60DD5EC5'
+  },
+  {
+    name: 'Lê Trần Minh Nguyệt',
+    school: 'Đại học Nguyễn Tất Thành',
+    hobby: 'Dance',
+    image: 'https://scontent.fhan2-3.fna.fbcdn.net/v/t1.6435-9/116798666_1447815202073148_3723205778531171277_n.jpg?_nc_cat=108&ccb=1-3&_nc_sid=8bfeb9&_nc_ohc=T5xdQPwd1lQAX-YZCcx&_nc_ht=scontent.fhan2-3.fna&oh=6a24ceef38cdab4c55294cd88b509766&oe=60DE03EC'
+  }
+]
+
+function App() {
+
+  const classes = useStyles();
+
+  return (
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        {/* Thanh Navbar */}
+        <AppBar className={classes.appBar} position="static">
+          <Toolbar>
+            <Typography variant="h6" color="primary">
+              Blog
+            </Typography>
+          </Toolbar>
+        </AppBar>
+
+        {/* Banner */}
+        <Box className={classes.hero}>
+          <Box>Blog NTK</Box>
+        </Box>
+
+        <Container maxWidth="lg" className={classes.blogsContainer}>
+          {/* Content */}
+          <Typography variant="h4" className={classes.blogTitle}>
+            Articels
+          </Typography>
+
+          <Grid container spacing="3">
+            {users.map((user, index) => {
+              return (
+                <Grid item xs={12} sm={6} md={4}>
+                  <Card className={classes.card}>
+                    <CardActionArea>
+                      {/* Hiển thị ảnh */}
+                      <CardMedia
+                        className={classes.media}
+                        image={user.image}
+                        title={user.name}
+                      />
+                      {/* Hiển thị nội dung (variant: Hiển thị theo thẻ, component: Thẻ chứa) */}
+                      <CardContent>
+                        <Typography gutterBottom variant="h5" component="h2">
+                          {user.backgroundImage}
+                        </Typography>
+                        <Typography variant="body1" color="textSecondary" component="p">
+                          {user.hobby}
+                        </Typography>
+                        <Typography variant="body2" color="textPrimary" component="p">
+                          {user.school}
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+
+                    {/* Hiển thị tác giả thời gian */}
+                    <CardActions className={classes.cardAction}>
+                      <Box className={classes.author}>
+                          <Avatar
+                            src={user.image}
+                          />
+                          <Box ml={2}>
+                            <Typography variant="subtitle2" component="p">
+                                {user.name}
+                            </Typography>
+                            <Typography variant="subtitle2" color="textSecondary" component="p">
+                                2021, June 04
+                            </Typography>
+                          </Box>
+                      </Box>
+                      <Box>
+                        <BookmarkBorder/>
+                      </Box>
+                    </CardActions>
+                  </Card>
+                </Grid>
+              )
+            })}
+          </Grid>
+          {/* my là margin theo chiều y, mx là margin theo chiều x */}
+          <Box my={4} className={classes.pagination}>
+              <Pagination count={10}/>
+          </Box>
+        </Container>
+      </div>
+    </ThemeProvider>
+  );
+}
+
+export default App;

@@ -1,0 +1,164 @@
+import React from 'react';
+import './App.css';
+import { ButtonGroup, Button, Checkbox, FormControlLabel, TextField, makeStyles, ThemeProvider, createMuiTheme, Typography, Container, Paper, Grid, AppBar, Toolbar, IconButton } from '@material-ui/core';
+import { yellow, teal } from '@material-ui/core/colors';
+import { Save, Delete, Add, Remove, Menu } from '@material-ui/icons';
+import 'fontsource-roboto';
+
+function ButtonExample() {
+  return (
+    // Nếu muốn các Button con dùng chung thuộc tính thì truyền vào ButtonGroup
+    <ButtonGroup variant="outlined" style={{fontSize: 18}}>
+      <Button
+        startIcon={<Save />} // Hiển thị icon trong button bên trái
+        // endIcon={<Save />}   // Hiển thị icon trong button bên phải
+        color="primary"
+        // href="https://www.facebook.com/"
+        // onClick={() => alert("Hello Nguyễn Trung Kiên")}
+        size="large"
+      >
+        Nguyễn Trung Kiên
+      </Button>
+
+      <Button
+        startIcon={<Delete />} // Hiển thị icon trong button bên trái
+        // endIcon={<Delete />}   // Hiển thị icon trong button bên phải
+        color="secondary"
+        // href="https://www.facebook.com/bbangg.mii"
+        // onClick={() => alert("Hello Ngô Nguyễn Phong My")}
+        size="large"
+      >
+        Ngô Nguyễn Phong My
+      </Button>
+    </ButtonGroup >
+  )
+}
+
+function CheckBoxExample() {
+
+  const [checked, setChecked] = React.useState(true);
+
+  return (
+    <FormControlLabel
+      control={
+        <Checkbox checked={checked}
+          onChange={(event) => setChecked(event.target.checked)}
+          // icon={<Remove />}      // Nếu chưa check là icon trừ
+          // checkedIcon={<Add />}  // Nếu đã check là icon cộng
+          inputProps={{
+            'aria-label': 'primary checkbox'
+          }}
+        />
+      }
+      label="Testing Checkbox"
+    />
+  )
+}
+
+function TextFieldExample() {
+  return (
+    <TextField
+      variant="outlined"
+      color="secondary"
+      type="time"
+      label="The Time"
+    // value="Nguyễn Trung Kiên"
+    // placeholder="Nguyễn Trung Kiên"
+    />
+
+  )
+}
+
+// Thiết kế css
+const useStyles = makeStyles({
+  root: {
+    background: 'linear-gradient(45deg, #FE6B8B, #FF8E53)',
+    border: 0,
+    borderRadius: 15,
+    marginBottom: 15,
+    color: 'white',
+    padding: '5px 30px'
+  }
+})
+
+function ButtonStyled() {
+  const classes = useStyles();
+  return <Button className={classes.root}>Test Styled Button</Button>
+}
+
+// Định dạng lại theme (giao diện) theo ý muốn
+const theme = createMuiTheme({
+  palette: {
+    // Định dạng lại kiểu màu primary
+    primary: {
+      main: yellow[400],
+    },
+    // Định dạng lại kiểu màu secondary
+    secondary: {
+      main: teal[400],
+    },
+  },
+  typography: {
+    h2: {
+      fontSize: 36,
+      marginBottom: 10
+    }
+  }
+})
+
+function App() {
+  return (
+    <ThemeProvider theme={theme}>
+      <Container maxWidth="xs">
+        <div className="App">
+          <header className="App-header">
+
+            <AppBar>
+              <Toolbar>
+                <IconButton>
+                  <Menu />
+                </IconButton>
+                <Typography variant="h6">
+                  UI NTK
+                </Typography>
+                <Button>
+                  Login
+                </Button>
+              </Toolbar>
+            </AppBar>
+
+            {/* Typography Dữ liệu hiển thị ở dạng nào */}
+            <Typography variant="h2" component="div">
+              Nguyễn Trung Kiên
+            </Typography>
+            <Typography variant="subtitle1" component="div">
+              Ngô Nguyễn Phong My
+            </Typography>
+
+            <ButtonStyled />
+
+            <Grid container spacing={3} justify="center">
+              <Grid item xs={3} sm={6}>
+                <Paper style={{ height: 75, width: '100%' }}></Paper>
+              </Grid>
+              <Grid item xs={3} sm={6}>
+                <Paper style={{ height: 75, width: '100%' }}></Paper>
+              </Grid>
+              <Grid item xs={3} sm={6}>
+                <Paper style={{ height: 75, width: '100%' }}></Paper>
+              </Grid>
+            </Grid>
+
+            <TextFieldExample />
+
+            <CheckBoxExample />
+
+            <ButtonExample />
+          </header>
+        </div>
+      </Container>
+    </ThemeProvider>
+  );
+}
+
+export default App;
