@@ -1,10 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../../../node_modules/materialize-css/dist/css/materialize.min.css';
 import Img1 from '../../Images/view1.jpeg';
 import Img2 from '../../Images/view2.jpeg';
 import Img3 from '../../Images/view3.jpeg';
-import { Link } from 'react-router-dom';
-import './style.css'
+import './style.css';
 
 const Infomartion = [
     {
@@ -52,3 +52,6 @@ export default function Banner() {
         </section>
     )
 }
+
+// Lý thuyết
+// - hide-on-small-only: (Responsive) Ẩn khi kích thước màn hình là di động (Nằm trong Helpers) 

@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../../node_modules/materialize-css/dist/css/materialize.min.css';
-import './style.css'
+import './style.css';
 
 const tourists = [
     {

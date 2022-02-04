@@ -1,6 +1,6 @@
 import React from 'react';
-import '../../../node_modules/materialize-css/dist/css/materialize.min.css';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
+import '../../../node_modules/materialize-css/dist/css/materialize.min.css';
 
 function SmoothScroll() {
     return (
@@ -23,6 +23,7 @@ function SmoothScroll() {
                     </div>
                 </nav>
             </div>
+
             <ul className="sidenav" id="mobile-demo">
                 <li><AnchorLink href="#home">Home</AnchorLink></li>
                 <li><AnchorLink href="#search">Search</AnchorLink></li>
@@ -42,3 +43,6 @@ export default function Navbar() {
         </div>
     )
 }
+
+// Lý thuyết
+// - hide-on-med-and-down: (Responsive) Nếu kích thước từ máy tính bảng đổ xuống thì ẩn đi (Nằm trong Helpers) 
