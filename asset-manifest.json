@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/React-Material-Basic/static/css/main.445f2da2.chunk.css",
+    "main.js": "/React-Material-Basic/static/js/main.f64c1a62.chunk.js",
+    "main.js.map": "/React-Material-Basic/static/js/main.f64c1a62.chunk.js.map",
+    "runtime-main.js": "/React-Material-Basic/static/js/runtime-main.50f9675a.js",
+    "runtime-main.js.map": "/React-Material-Basic/static/js/runtime-main.50f9675a.js.map",
+    "static/css/2.95ff951f.chunk.css": "/React-Material-Basic/static/css/2.95ff951f.chunk.css",
+    "static/js/2.ce7cce8b.chunk.js": "/React-Material-Basic/static/js/2.ce7cce8b.chunk.js",
+    "static/js/2.ce7cce8b.chunk.js.map": "/React-Material-Basic/static/js/2.ce7cce8b.chunk.js.map",
+    "index.html": "/React-Material-Basic/index.html",
+    "static/css/2.95ff951f.chunk.css.map": "/React-Material-Basic/static/css/2.95ff951f.chunk.css.map",
+    "static/css/main.445f2da2.chunk.css.map": "/React-Material-Basic/static/css/main.445f2da2.chunk.css.map",
+    "static/js/2.ce7cce8b.chunk.js.LICENSE.txt": "/React-Material-Basic/static/js/2.ce7cce8b.chunk.js.LICENSE.txt",
+    "static/media/brazil.0bf5fd2a.jpeg": "/React-Material-Basic/static/media/brazil.0bf5fd2a.jpeg",
+    "static/media/newyork2.06075fd0.jpeg": "/React-Material-Basic/static/media/newyork2.06075fd0.jpeg",
+    "static/media/phuquoc.26fe8007.jpg": "/React-Material-Basic/static/media/phuquoc.26fe8007.jpg",
+    "static/media/view1.cd3cfb74.jpeg": "/React-Material-Basic/static/media/view1.cd3cfb74.jpeg",
+    "static/media/view2.9c5b6bab.jpeg": "/React-Material-Basic/static/media/view2.9c5b6bab.jpeg",
+    "static/media/view3.3435b0f4.jpeg": "/React-Material-Basic/static/media/view3.3435b0f4.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.50f9675a.js",
+    "static/css/2.95ff951f.chunk.css",
+    "static/js/2.ce7cce8b.chunk.js",
+    "static/css/main.445f2da2.chunk.css",
+    "static/js/main.f64c1a62.chunk.js"
+  ]
+}
